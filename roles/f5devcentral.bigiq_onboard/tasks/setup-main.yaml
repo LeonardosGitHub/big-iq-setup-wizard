@@ -1,0 +1,24 @@
+---
+- include_tasks: setup-licensing-bigiq.yaml
+
+- include_tasks: setup-basic-auth.yaml
+  when: bigiq_onboard_set_basic_auth|default(False)|bool
+
+- include_tasks: setup-node-type.yaml
+
+- include_tasks: setup-management-address.yaml
+
+- include_tasks: setup-services.yaml
+
+- include_tasks: setup-master-passphrase.yaml
+
+- include_tasks: setup-hostname.yaml
+
+- include_tasks: setup-passwords.yaml
+
+- include_tasks: setup-mark-system-setup.yaml
+
+- include_tasks: setup-cm-ha.yaml
+  when:
+    - bigiq_onboard_node_type == 'cm'
+    - secondary_bigiq_address is defined

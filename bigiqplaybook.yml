@@ -1,0 +1,7 @@
+- name: Set up a CM BIG-IQ
+  hosts: bigiq.example.com
+  gather_facts: no
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: f5devcentral.bigiq_onboard }
