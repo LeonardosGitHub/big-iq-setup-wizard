@@ -28,6 +28,7 @@ Ansible playbook to provision BIG-IQ based on [Ansible Galaxy f5devcentral/bigiq
 
   Sample inventory file.
 
+  - Replace `bigiq.example.com` with the host name of the BIG-IQ host
   - Replace `1.2.3.4` with the IP of the BIG-IQ host
 
 4. `vars/main.yaml`
